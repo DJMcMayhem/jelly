@@ -2167,6 +2167,7 @@ atoms = {
 	),
 	'Œṗ': attrdict(
 		arity = 1,
+		ldepth = 0,
 		call = integer_partitions
 	),
 	'Œp': attrdict(
