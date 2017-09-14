@@ -625,7 +625,7 @@ def integer_partitions(n, I=1):
 	for i in range(I, n//2 + 1):
 		for p in integer_partitions(n-i, i):
 			result.append([i,] + p)
-	return result
+	return sorted(result)
 
 def partitions(array):
 	array = iterable(array, make_digits = True)
