@@ -625,7 +625,7 @@ def integer_partitions(n, I=1):
 	for i in range(I, n//2 + 1):
 		for p in integer_partitions(n-i, i):
 			result.append([i,] + p)
-	return sorted(result)
+	return result
 
 def partitions(array):
 	array = iterable(array, make_digits = True)
@@ -2168,7 +2168,7 @@ atoms = {
 	'Œṗ': attrdict(
 		arity = 1,
 		ldepth = 0,
-		call = integer_partitions
+		call = lambda z: sorted(integer_partitions(z), key = len, reverse = True)
 	),
 	'Œp': attrdict(
 		arity = 1,
