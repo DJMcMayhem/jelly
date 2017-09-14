@@ -2158,6 +2158,10 @@ atoms = {
 		arity = 1,
 		call = partitions
 	),
+	'Œṗ': attrdict(
+		arity = 1,
+		call = lambda z:{(*sorted([*p,i]),)for i in range(1,z)for p in f(z-i)}|{(z,)}
+	),
 	'Œp': attrdict(
 		arity = 1,
 		call = lambda z: listify(itertools.product(*[iterable(t, make_range = True) for t in z]))
