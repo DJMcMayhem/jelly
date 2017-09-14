@@ -621,10 +621,11 @@ def overload(operators, *args):
 			return ret
 
 def integer_partitions(n, I=1):
-    yield (n,)
-    for i in range(I, n//2 + 1):
-        for p in integer_partitions(n-i, i):
-            yield (i,) + p
+	result = [[n,]]
+	for i in range(I, n//2 + 1):
+		for p in integer_partitions(n-i, i):
+			result.append([i,] + p)
+	return result
 
 def partitions(array):
 	array = iterable(array, make_digits = True)
